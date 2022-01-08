@@ -4,26 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link rel="stylesheet" type="text/css" href="./style.css" media="screen" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="container">
+      <div class="padre row">
+        <div class="col-3"></div>
+        <div class="col-3 img"></div>
+        <div id="xcard" class="card col-3"></div>
+        <div class="button col 1">
+          <button id="button2">Int 10s</button>
+          <button id="button">New Card</button>
+          <button id="button3">Stop Int</button>
+          <input type="text" placeholder="width" id="ancho" name="width" />
+          <input type="text" placeholder="heigth" id="alto" name="heigth" />
+        </div>
       </div>
     </div>
+    <script src="./app.js"></script>
   </body>
 </html>
