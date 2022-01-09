@@ -60,7 +60,7 @@ button2.addEventListener("click", ActivarTiempo);
 
 let xx;
 function ActivarTiempo() {
-  xx = setInterval(randomCards, 10000);
+  xx = setInterval(randomCards, 3000);
   let button3 = document.querySelector("#button3");
   button3.addEventListener("click", PararTiempo);
 }
@@ -68,3 +68,36 @@ function ActivarTiempo() {
 function PararTiempo() {
   clearInterval(xx);
 }
+
+const todoList = [];
+const button4 = document.querySelector("#button4");
+
+const handelClick = event => {
+  event.preventDefault();
+  const ancho = document.querySelector("#ancho");
+  const alto = document.querySelector("#alto");
+  const todoData = {
+    ancho: ancho.value,
+    alto: alto.value
+  };
+  todoList.push(todoData);
+  console.log(todoList);
+  elem.style.height = `${todoList[0].alto}px`;
+  elem.style.width = `${todoList[0].ancho}px`;
+  ancho.value = "";
+  alto.value = "";
+  todoList.shift();
+};
+
+let elem = document.getElementById("xcard");
+
+button4.addEventListener("click", handelClick);
+
+const resetSize = event => {
+  event.preventDefault();
+  elem.style.height = `460px`;
+  elem.style.width = `240px`;
+};
+let button5 = document.querySelector("#button5");
+
+button5.addEventListener("click", resetSize);
