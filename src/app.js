@@ -8,46 +8,31 @@ function randomCards() {
   let iconIndex = Math.floor(Math.random() * 4);
   let numberCard = Math.floor(Math.random() * 12 + 1);
   let contentCard = icon[iconIndex];
-  if (numberCard < 10 && (iconIndex === 0 || iconIndex === 1)) {
+  if (numberCard < 10) {
     document.getElementById(
       "xcard"
-    ).innerHTML = `<div class="headCard red">${contentCard}</div><div class="bodyCard">${numberCard}</div><div class="footCard red">${contentCard}</div>`;
+    ).innerHTML = `<div class="headCard">${contentCard}</div><div class="bodyCard">${numberCard}</div><div  class="footCard">${contentCard}</div>`;
   }
-  if (numberCard < 10 && (iconIndex === 2 || iconIndex === 3)) {
+  if (numberCard === 10) {
     document.getElementById(
       "xcard"
-    ).innerHTML = `<div class="headCard black">${contentCard}</div><div class="bodyCard">${numberCard}</div><div class="footCard black">${contentCard}</div>`;
+    ).innerHTML = `<div  class="headCard">${contentCard}J</div><div class="bodyCard">${numberCard}</div><div class="footCard">J${contentCard}</div>`;
   }
-
-  if (numberCard === 10 && (iconIndex === 0 || iconIndex === 1)) {
+  if (numberCard === 11) {
     document.getElementById(
       "xcard"
-    ).innerHTML = `<div class="headCard red">${contentCard}J</div><div class="bodyCard">${numberCard}</div><div class="footCard red">J${contentCard}</div>`;
+    ).innerHTML = `<div class="headCard">${contentCard}Q</div><div class="bodyCard">${numberCard}</div><div class="footCard">Q${contentCard}</div>`;
   }
-  if (numberCard === 10 && (iconIndex === 2 || iconIndex === 3)) {
+  if (numberCard === 12) {
     document.getElementById(
       "xcard"
-    ).innerHTML = `<div class="headCard black">${contentCard}J</div><div class="bodyCard">${numberCard}</div><div class="footCard black">J${contentCard}</div>`;
+    ).innerHTML = `<div class="headCard">${contentCard}K</div><div class="bodyCard">${numberCard}</div><div class="footCard">K${contentCard}</div>`;
   }
-  if (numberCard === 11 && (iconIndex === 0 || iconIndex === 1)) {
-    document.getElementById(
-      "xcard"
-    ).innerHTML = `<div class="headCard red">${contentCard}Q</div><div class="bodyCard">${numberCard}</div><div class="footCard red">Q${contentCard}</div>`;
-  }
-  if (numberCard === 11 && (iconIndex === 2 || iconIndex === 3)) {
-    document.getElementById(
-      "xcard"
-    ).innerHTML = `<div class="headCard black">${contentCard}Q</div><div class="bodyCard">${numberCard}</div><div class="footCard black">Q${contentCard}</div>`;
-  }
-  if (numberCard === 12 && (iconIndex === 0 || iconIndex === 1)) {
-    document.getElementById(
-      "xcard"
-    ).innerHTML = `<div class="headCard red">${contentCard}K</div><div class="bodyCard">${numberCard}</div><div class="footCard red">K${contentCard}</div>`;
-  }
-  if (numberCard === 12 && (iconIndex === 2 || iconIndex === 3)) {
-    document.getElementById(
-      "xcard"
-    ).innerHTML = `<div class="headCard black">${contentCard}K</div><div class="bodyCard">${numberCard}</div><div class="footCard black">K${contentCard}</div>`;
+  if (iconIndex === 0 || iconIndex === 1) {
+    let headRed = document.querySelector(".headCard");
+    let footRed = document.querySelector(".footCard");
+    footRed.style.color = "red";
+    headRed.style.color = "red";
   }
 }
 window.onload = randomCards();
