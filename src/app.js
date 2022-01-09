@@ -96,7 +96,7 @@ button4.addEventListener("click", handelClick);
 const resetSize = event => {
   event.preventDefault();
   elem.style.height = `460px`;
-  elem.style.width = `240px`;
+  elem.style.width = `280px`;
 };
 let button5 = document.querySelector("#button5");
 
